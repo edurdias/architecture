@@ -52,7 +52,7 @@ using System.Linq;
 <#
 }
 #>
-
+[DbConfigurationType(typeof(ProviderConfiguration))]
 <#=Accessibility.ForType(container)#> partial class <#=code.Escape(container)#> : DbContext
 {
     public <#=code.Escape(container)#>()

@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Infrastructure.Data
+namespace AdventureWorks.Infrastructure.Data
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    [DbConfigurationType(typeof(ProviderConfiguration))]
     public partial class AdventureWorks2012 : DbContext
     {
         public AdventureWorks2012()

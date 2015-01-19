@@ -6,8 +6,8 @@
     <ProjectGuid>{10AE2F81-C59B-4E54-9B61-28F92F4F0657}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Contracts.Tests</RootNamespace>
-    <AssemblyName>Contracts.Tests</AssemblyName>
+    <RootNamespace>AdventureWorks.Domain.Contracts.Tests</RootNamespace>
+    <AssemblyName>AdventureWorks.Domain.Contracts.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

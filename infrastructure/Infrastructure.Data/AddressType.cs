@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Infrastructure.Data
+namespace AdventureWorks.Infrastructure.Data
 {
     using System;
     using System.Collections.Generic;

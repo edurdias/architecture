@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Contracts.Tests
+namespace AdventureWorks.Domain.Contracts.Tests
 {
     [TestClass]
     public class UnitTest1

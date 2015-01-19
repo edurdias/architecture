@@ -1,4 +1,4 @@
-namespace Web.ViewModels.Person
+namespace AdventureWorks.Apps.Web.ViewModels.Person
 {
     public class IndexViewModel
     {

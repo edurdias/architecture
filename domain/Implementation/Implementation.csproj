@@ -7,8 +7,8 @@
     <ProjectGuid>{390CC4BF-F1DE-4DD7-BAC0-EA914712BE3D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain.Implementation</RootNamespace>
-    <AssemblyName>Implementation</AssemblyName>
+    <RootNamespace>AdventureWorks.Domain.Implementation</RootNamespace>
+    <AssemblyName>AdventureWorks.Domain.Implementation</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

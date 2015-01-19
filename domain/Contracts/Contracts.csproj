@@ -7,8 +7,8 @@
     <ProjectGuid>{9922FD40-64BD-47E5-B3CA-C6BD24AB992B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain.Contracts</RootNamespace>
-    <AssemblyName>Contracts</AssemblyName>
+    <RootNamespace>AdventureWorks.Domain.Contracts</RootNamespace>
+    <AssemblyName>AdventureWorks.Domain.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

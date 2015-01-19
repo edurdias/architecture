@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Foundation.Tests
+namespace AdventureWorks.Foundation.Tests
 {
     [TestClass]
     public class UnitTest1
