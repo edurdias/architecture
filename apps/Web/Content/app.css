@@ -1,0 +1,18 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 400px) {
+    .truncate {
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+
+.validation-summary-valid {
+    display: none;
+}
