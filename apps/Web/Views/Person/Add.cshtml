@@ -12,7 +12,8 @@
     @Html.AntiForgeryToken();
     @Html.ValidationSummary(null, new { @class = "alert alert-danger" })
 
-
+    Html.RenderPartial("Message");
+    
     <div class="form-group">
         @Html.LabelFor(m => m.FirstName)
         @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control" } })

@@ -27,5 +27,7 @@ namespace AdventureWorks.Infrastructure.Data
         public virtual ICollection<BusinessEntityAddress> BusinessEntityAddresses { get; set; }
         public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
         public virtual Person Person { get; set; }
+        public virtual Store Store { get; set; }
+        public virtual Vendor Vendor { get; set; }
     }
 }

@@ -17,14 +17,16 @@ namespace AdventureWorks.Foundation
                 {
                     var builder = new ContainerBuilder();
 
-                    var assemblies = BuildManager.GetReferencedAssemblies().Cast<Assembly>();
+                    var assemblies = BuildManager.GetReferencedAssemblies()
+                            .Cast<Assembly>()
+                            .Where(asm => asm.FullName.StartsWith("AdventureWorks"));
+
                     foreach (var assembly in assemblies)
                     {
                         builder.RegisterAssemblyTypes(assembly)
                             .AsImplementedInterfaces();
                     }
                     
-
                     container = builder.Build();
                 }
                 return container;
@@ -34,6 +36,13 @@ namespace AdventureWorks.Foundation
         public static T Resolve<T>()
         {
             return Container.Resolve<T>();
+
+        }
+        public static T Resolve<T>(object parameters)
+        {
+            var properties = parameters.GetType().GetProperties();
+            var @params = properties.Select(p => new NamedParameter(p.Name, p.GetValue(parameters)));
+            return Container.Resolve<T>(@params);
         }
     }
 }

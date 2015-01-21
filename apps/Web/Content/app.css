@@ -16,3 +16,37 @@
 .validation-summary-valid {
     display: none;
 }
+
+
+.hide-after-5-sec {
+    -moz-animation: hideAnimation 0s ease-in-out 5s forwards;
+    /* Firefox */
+    -webkit-animation: hideAnimation 0s ease-in-out 5s forwards;
+    /* Safari and Chrome */
+    -o-animation: hideAnimation 0s ease-in-out 5s forwards;
+    /* Opera */
+    animation: hideAnimation 0s ease-in-out 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+}
+@-webkit-keyframes hideAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+}

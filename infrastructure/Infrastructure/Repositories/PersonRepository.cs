@@ -4,17 +4,17 @@ using System.Data.Entity;
 using System.Linq;
 using AdventureWorks.Domain.Contracts;
 using AdventureWorks.Domain.Contracts.Repositories;
+using AdventureWorks.Foundation;
 using AdventureWorks.Infrastructure.Data;
 using Foundation.Services;
-using Person = AdventureWorks.Domain.Implementation.Person;
 
 namespace AdventureWorks.Infrastructure.Repositories
 {
-    public class PersonRepository : IPersonRepository, ITranslator<IPerson, Data.Person>
+    public class PersonRepository : IPersonRepository, ITranslator<IPerson, Person>
     {
         public IPerson Get(int id)
         {
-            using (var context = new Data.AdventureWorks2012())
+            using (var context = new AdventureWorksContext())
             {
                 return Translate(context.People.Find(id));
             }
@@ -22,7 +22,7 @@ namespace AdventureWorks.Infrastructure.Repositories
 
         public IList<IPerson> GetAll(int skip = 0, int take = int.MaxValue)
         {
-            using (var context = new Data.AdventureWorks2012())
+            using (var context = new AdventureWorksContext())
             {
                 return context.People
                     .OrderBy(p => p.BusinessEntityID)
@@ -36,7 +36,7 @@ namespace AdventureWorks.Infrastructure.Repositories
 
         public void Add(IPerson person)
         {
-            using (var context = new Data.AdventureWorks2012())
+            using (var context = new AdventureWorksContext())
             {
                 context.People.Add(Translate(person));
                 context.SaveChanges();
@@ -45,7 +45,7 @@ namespace AdventureWorks.Infrastructure.Repositories
 
         public void Update(IPerson person)
         {
-            using (var context = new Data.AdventureWorks2012())
+            using (var context = new AdventureWorksContext())
             {
                 var entity = Translate(person);
                 context.Entry(entity).State = EntityState.Modified;
@@ -55,30 +55,32 @@ namespace AdventureWorks.Infrastructure.Repositories
 
         public void Remove(IPerson person)
         {
-            using (var context = new Data.AdventureWorks2012())
+            using (var context = new AdventureWorksContext())
             {
-                var entity = Translate(person);
-                context.Entry(entity).State = EntityState.Deleted;
+                var entity = context.People.Find(person.Id);
+                context.People.Remove(entity);
                 context.SaveChanges();
             }
         }
 
         public int CountAll()
         {
-            using (var context = new Data.AdventureWorks2012())
+            using (var context = new AdventureWorksContext())
             {
                 return context.People.Count();
             }
         }
 
-        public Data.Person Translate(IPerson instance)
+        public Person Translate(IPerson instance)
         {
             if (instance == null)
                 return null;
 
-            return new Data.Person
+            var businessEntityID = instance.Id.HasValue ? instance.Id.Value : 0;
+
+            return new Person
             {
-                BusinessEntityID = instance.Id.HasValue ? instance.Id.Value : 0,
+                BusinessEntityID = businessEntityID,
                 PersonType = instance.Type ?? "EM",
                 FirstName = instance.FirstName,
                 LastName = instance.LastName,
@@ -87,24 +89,25 @@ namespace AdventureWorks.Infrastructure.Repositories
 
                 BusinessEntity = new BusinessEntity
                 {
+                    BusinessEntityID = businessEntityID,
                     rowguid = Guid.NewGuid(),
                     ModifiedDate = DateTime.Now
                 }
             };
         }
 
-        public IPerson Translate(Data.Person instance)
+        public IPerson Translate(Person instance)
         {
             if (instance == null)
                 return null;
 
-            return new Person
-            {
-                Id = instance.BusinessEntityID,
-                Type = instance.PersonType,
-                FirstName = instance.FirstName,
-                LastName = instance.LastName
-            };
+            var person = Ioc.Resolve<IPerson>();
+            person.Id = instance.BusinessEntityID;
+            person.Type = instance.PersonType;
+            person.FirstName = instance.FirstName;
+            person.LastName = instance.LastName;
+
+            return person;
         }
     }
 }

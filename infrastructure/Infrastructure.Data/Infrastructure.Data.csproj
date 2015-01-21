@@ -52,89 +52,312 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="AddressType.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Application.Context.cs">
+    <Compile Include="AdventureWorksContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Application.Context.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Application.cs">
+    <Compile Include="AdventureWorksContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Application.Designer.cs">
+    <Compile Include="AdventureWorksContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Application.edmx</DependentUpon>
+      <DependentUpon>AdventureWorksContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="AWBuildVersion.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillOfMaterial.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="BusinessEntity.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="BusinessEntityAddress.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="BusinessEntityContact.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProviderConfiguration.cs" />
     <Compile Include="ContactType.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="CountryRegion.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CountryRegionCurrency.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCard.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Culture.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyRate.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseLog.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="EmailAddress.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeDepartmentHistory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePayHistory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorLog.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Illustration.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobCandidate.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Password.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Person.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonCreditCard.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="PersonPhone.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="PhoneNumberType.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCostHistory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDescription.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDocument.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductInventory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductListPriceHistory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductModel.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductModelIllustration.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductModelProductDescriptionCulture.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPhoto.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductProductPhoto.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReview.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSubcategory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductVendor.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrderDetail.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrderHeader.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderDetail.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderHeader.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderHeaderSalesReason.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPerson.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPersonQuotaHistory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReason.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesTaxRate.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesTerritory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesTerritoryHistory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScrapReason.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shift.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipMethod.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCartItem.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialOffer.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialOfferProduct.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="StateProvince.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionHistory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionHistoryArchive.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitMeasure.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="vAdditionalContactInfo.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vEmployee.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vEmployeeDepartment.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vEmployeeDepartmentHistory.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vendor.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vIndividualCustomer.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vJobCandidate.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vJobCandidateEducation.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vJobCandidateEmployment.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vPersonDemographic.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vProductAndDescription.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vProductModelCatalogDescription.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vProductModelInstruction.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSalesPerson.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSalesPersonSalesByFiscalYear.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="vStateProvinceCountryRegion.cs">
-      <DependentUpon>Application.tt</DependentUpon>
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vStoreWithAddress.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vStoreWithContact.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vStoreWithDemographic.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vVendorWithAddress.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vVendorWithContact.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOrder.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOrderRouting.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Application.edmx">
+    <EntityDeploy Include="AdventureWorksContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.cs</LastGenOutput>
+      <LastGenOutput>AdventureWorksContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="AdventureWorksContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventureWorksContext.edmx</DependentUpon>
+      <LastGenOutput>AdventureWorksContext.Context.cs</LastGenOutput>
+    </None>
+    <None Include="AdventureWorksContext.edmx.diagram">
+      <DependentUpon>AdventureWorksContext.edmx</DependentUpon>
+    </None>
+    <None Include="AdventureWorksContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventureWorksContext.edmx</DependentUpon>
+      <LastGenOutput>AdventureWorksContext.cs</LastGenOutput>
+    </None>
     <None Include="App.Config" />
-    <None Include="Application.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Application.Context.cs</LastGenOutput>
-      <DependentUpon>Application.edmx</DependentUpon>
-    </None>
-    <None Include="Application.edmx.diagram">
-      <DependentUpon>Application.edmx</DependentUpon>
-    </None>
-    <None Include="Application.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Application.edmx</DependentUpon>
-      <LastGenOutput>Application.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

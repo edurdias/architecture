@@ -2,16 +2,26 @@ using AdventureWorks.Domain.Contracts;
 
 namespace AdventureWorks.Apps.Web.ViewModels.Person
 {
-    public class EditViewModel
+    public class EditViewModel : AddViewModel
     {
-        public EditViewModel(IPerson domain)
+        public EditViewModel()
         {
-            
         }
 
-        public IPerson ToDomain()
+        public EditViewModel(IPerson domain)
         {
-            return null;
+            Id = domain.Id;
+            FirstName = domain.FirstName;
+            LastName = domain.LastName;
+        }
+
+        public int? Id { get; set; }
+
+        public override IPerson ToDomain()
+        {
+            var domain = base.ToDomain();
+            domain.Id = Id;
+            return domain;
         }
     }
 }

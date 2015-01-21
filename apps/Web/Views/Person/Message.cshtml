@@ -1,0 +1,9 @@
+﻿@if (TempData.ContainsKey("message"))
+{
+    var messageType = TempData.ContainsKey("messageType") ? TempData["messageType"] : "success";
+
+    <div class="alert alert-@messageType hide-after-5-sec">
+        @TempData["message"]
+    </div>
+}
+

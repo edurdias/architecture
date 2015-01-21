@@ -5,7 +5,7 @@ using AdventureWorks.Foundation;
 
 namespace AdventureWorks.Apps.Web.ViewModels.Person
 {
-    public class AddViewModel
+    public class AddViewModel : IDomainConvertible<IPerson>
     {
         [Required]
         [DisplayName("First Name")]
@@ -15,7 +15,7 @@ namespace AdventureWorks.Apps.Web.ViewModels.Person
         [DisplayName("Last Name")]
         public string LastName { get; set; }
 
-        public IPerson ToDomain()
+        public virtual IPerson ToDomain()
         {
             var domain = Ioc.Resolve<IPerson>();
             domain.FirstName = FirstName;

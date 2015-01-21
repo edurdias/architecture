@@ -1,32 +1,29 @@
 ﻿@model Pagination<IPerson, AdventureWorks.Apps.Web.ViewModels.Person.IndexViewModel>
 
 
-@if (TempData.ContainsKey("message"))
-{
-    var messageType = TempData.ContainsKey("messageType") ? TempData["messageType"] : "success";
-    
-    <div class="alert alert-@messageType">
-        @TempData["message"]
-    </div>
-}
+
 
 <h2>
     <span class="truncate">People</span>
     @Html.ActionLink("Add New", "Add", null, new { @class = "btn btn-primary pull-right" })
 </h2>
 
+@{
+    Html.RenderPartial("Message");
+}
 
 <table class="table table-bordered"
        data-toggle="table"
        data-url="@Url.Action("Index")"
        data-pagination="true"
        data-side-pagination="server"
-    >
+       data-height="605">
     <thead>
         <tr>
             <th data-field="Id" class="col-md-1">#</th>
             <th data-field="FullName">Full Name</th>
             <th data-field="Id" data-formatter="formatRemoveColumn" class="col-md-1"></th>
+            <th data-field="Id" data-formatter="formatEditColumn" class="col-md-1"></th>
         </tr>
     </thead>
     <tbody></tbody>
@@ -36,7 +33,14 @@
 
 <script type="text/javascript">
     function formatRemoveColumn(value) {
-        var path = "@Url.Action("Remove", new { id = "-" })".replace("-", value);
-        return "<a class='btn btn-default' href='" + path + "'>Remove</a>";
+        return formatActionColumn("@Url.Action("Remove")/" + value, "Remove");
+    }
+
+    function formatEditColumn(value) {
+        return formatActionColumn("@Url.Action("Edit")/" + value, "Edit");
+    }
+
+    function formatActionColumn(path, label) {
+        return "<a class='btn btn-default btn-block' href='" + path + "'>" + label + "</a>";
     }
 </script>
