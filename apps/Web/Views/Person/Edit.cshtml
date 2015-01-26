@@ -1,0 +1,39 @@
+﻿@model AdventureWorks.Apps.Web.ViewModels.Person.EditViewModel
+
+@{
+}
+
+<h2>People : Edit Person</h2>
+
+@using (Html.BeginForm())
+{
+
+    Html.EnableClientValidation();
+
+    @Html.AntiForgeryToken();
+    @Html.ValidationSummary(null, new { @class = "alert alert-danger" })
+
+    Html.RenderPartial("Message");
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName)
+        @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    @Html.HiddenFor(m => m.Id);
+
+    <div>
+        <button type="submit" class="btn btn-primary">
+            Save
+        </button>
+
+        <a href="@Url.Action("Index")" class="btn btn-default">
+            Cancel
+        </a>
+    </div>
+}
