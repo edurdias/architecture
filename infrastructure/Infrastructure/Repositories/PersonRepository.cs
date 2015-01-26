@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using AdventureWorks.Domain.Contracts;
 using AdventureWorks.Domain.Contracts.Repositories;
 using AdventureWorks.Foundation;
+using AdventureWorks.Foundation.Data;
+using AdventureWorks.Foundation.Services;
 using AdventureWorks.Infrastructure.Data;
 using Foundation.Services;
 
@@ -12,63 +13,55 @@ namespace AdventureWorks.Infrastructure.Repositories
 {
     public class PersonRepository : IPersonRepository, ITranslator<IPerson, Person>
     {
+        public PersonRepository(ILogService log, IDataContext context)
+        {
+            Log = log;
+            Context = context;
+        }
+
+        public IDataContext Context { get; set; }
+
+        public ILogService Log { get; set; }
+
         public IPerson Get(int id)
         {
-            using (var context = new AdventureWorksContext())
-            {
-                return Translate(context.People.Find(id));
-            }
+            return Translate(Context.Set<Person>().Find(id));
         }
 
         public IList<IPerson> GetAll(int skip = 0, int take = int.MaxValue)
         {
-            using (var context = new AdventureWorksContext())
-            {
-                return context.People
+            return Context.Set<Person>()
                     .OrderBy(p => p.BusinessEntityID)
                     .Skip(skip)
                     .Take(take)
                     .ToArray()
                     .Select(Translate)
                     .ToList();
-            }
-        }
-
-        public void Add(IPerson person)
-        {
-            using (var context = new AdventureWorksContext())
-            {
-                context.People.Add(Translate(person));
-                context.SaveChanges();
-            }
-        }
-
-        public void Update(IPerson person)
-        {
-            using (var context = new AdventureWorksContext())
-            {
-                var entity = Translate(person);
-                context.Entry(entity).State = EntityState.Modified;
-                context.SaveChanges();
-            }
-        }
-
-        public void Remove(IPerson person)
-        {
-            using (var context = new AdventureWorksContext())
-            {
-                var entity = context.People.Find(person.Id);
-                context.People.Remove(entity);
-                context.SaveChanges();
-            }
         }
 
         public int CountAll()
         {
-            using (var context = new AdventureWorksContext())
-            {
-                return context.People.Count();
-            }
+            return Context.Set<Person>().Count();
+        }
+
+        public void Add(IPerson person)
+        {
+            Context.Set<Person>().Add(Translate(person));
+            Context.SaveChanges();
+        }
+
+        public void Update(IPerson person)
+        {
+            var entity = Translate(person);
+            Context.MarkAsModified(entity);
+            Context.SaveChanges();
+        }
+
+        public void Remove(IPerson person)
+        {
+            var entity = Context.Set<Person>().Find(person.Id);
+            Context.Set<Person>().Remove(entity);
+            Context.SaveChanges();
         }
 
         public Person Translate(IPerson instance)

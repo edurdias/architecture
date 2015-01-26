@@ -363,6 +363,16 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\foundation\Foundation.Data\Foundation.Data.csproj">
+      <Project>{1203CADE-FFB5-4599-A960-937E00DF4CD3}</Project>
+      <Name>Foundation.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\foundation\Foundation\Foundation.csproj">
+      <Project>{C5D919F2-A824-4322-8666-FD393F8B71D3}</Project>
+      <Name>Foundation</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -46,6 +46,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Tests", "service\Api.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Proxy", "service\Api.Proxy\Api.Proxy.csproj", "{10991F4B-0AF2-46A6-9F90-BBE513F4AB72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation.Data", "foundation\Foundation.Data\Foundation.Data.csproj", "{1203CADE-FFB5-4599-A960-937E00DF4CD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{10991F4B-0AF2-46A6-9F90-BBE513F4AB72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10991F4B-0AF2-46A6-9F90-BBE513F4AB72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10991F4B-0AF2-46A6-9F90-BBE513F4AB72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1203CADE-FFB5-4599-A960-937E00DF4CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1203CADE-FFB5-4599-A960-937E00DF4CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1203CADE-FFB5-4599-A960-937E00DF4CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1203CADE-FFB5-4599-A960-937E00DF4CD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,5 +128,6 @@ Global
 		{4EBB8F68-11F2-4149-8A56-54F27D57417A} = {D169E4D3-3FBF-4AE3-8AEA-17639612092D}
 		{0407831E-A63F-4204-96DD-D406EA70EF6C} = {D169E4D3-3FBF-4AE3-8AEA-17639612092D}
 		{10991F4B-0AF2-46A6-9F90-BBE513F4AB72} = {D169E4D3-3FBF-4AE3-8AEA-17639612092D}
+		{1203CADE-FFB5-4599-A960-937E00DF4CD3} = {6775EFD9-EF29-4058-9181-86FCCFF35D6C}
 	EndGlobalSection
 EndGlobal

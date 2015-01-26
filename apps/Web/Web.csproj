@@ -44,6 +44,13 @@
       <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\..\packages\Autofac.Mvc5.3.3.3\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -176,6 +183,10 @@
     <ProjectReference Include="..\..\domain\Implementation\Implementation.csproj">
       <Project>{390cc4bf-f1de-4dd7-bac0-ea914712be3d}</Project>
       <Name>Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\foundation\Foundation.Data\Foundation.Data.csproj">
+      <Project>{1203cade-ffb5-4599-a960-937e00df4cd3}</Project>
+      <Name>Foundation.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\foundation\Foundation\Foundation.csproj">
       <Project>{C5D919F2-A824-4322-8666-FD393F8B71D3}</Project>

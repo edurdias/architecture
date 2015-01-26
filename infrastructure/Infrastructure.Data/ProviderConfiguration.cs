@@ -13,5 +13,4 @@ namespace AdventureWorks.Infrastructure.Data
             SetDefaultConnectionFactory(new SqlConnectionFactory());
         }
     }
-
 }

@@ -8,41 +8,64 @@ namespace AdventureWorks.Foundation
     public static class Ioc
     {
         private static IContainer container;
+        private static ContainerBuilder containerBuilder;
+        private static IScopeProvider provider;
 
         public static IContainer Container
         {
+            get { return container ?? (container = ContainerBuilder.Build()); }
+            set { container = value; }
+        }
+
+        public static IScopeProvider Provider
+        {
+            get { return provider ?? (provider = new IocScopeProvider(Container)); }
+            set { provider = value; }
+        }
+
+        public static ContainerBuilder ContainerBuilder
+        {
             get
             {
-                if (container == null)
+                if (containerBuilder == null)
                 {
-                    var builder = new ContainerBuilder();
+                    containerBuilder = new ContainerBuilder();
 
                     var assemblies = BuildManager.GetReferencedAssemblies()
-                            .Cast<Assembly>()
-                            .Where(asm => asm.FullName.StartsWith("AdventureWorks"));
+                        .Cast<Assembly>()
+                        .Where(asm => asm.FullName.StartsWith("AdventureWorks"));
 
                     foreach (var assembly in assemblies)
                     {
-                        builder.RegisterAssemblyTypes(assembly)
+                        containerBuilder.RegisterAssemblyTypes(assembly)
                             .AsImplementedInterfaces();
                     }
-                    
-                    container = builder.Build();
                 }
-                return container;
+                return containerBuilder;
             }
+            set { containerBuilder = value; }
         }
 
         public static T Resolve<T>()
         {
-            return Container.Resolve<T>();
-
+            return BeginScope().Resolve<T>();
         }
+
         public static T Resolve<T>(object parameters)
         {
             var properties = parameters.GetType().GetProperties();
             var @params = properties.Select(p => new NamedParameter(p.Name, p.GetValue(parameters)));
-            return Container.Resolve<T>(@params);
+            return BeginScope().Resolve<T>(@params);
+        }
+
+        public static IocScope BeginScope()
+        {
+            return new IocScope(Provider.BeginScope());
+        }
+
+        public static IocScope BeginScope(string scopeName)
+        {
+            return new IocScope(Provider.BeginScope(scopeName));
         }
     }
 }
