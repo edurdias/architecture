@@ -1,0 +1,1 @@
+# Baseline Architecture Template
