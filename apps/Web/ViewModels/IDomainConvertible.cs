@@ -1,6 +1,6 @@
 namespace AdventureWorks.Apps.Web.ViewModels
 {
-    public interface IDomainConvertible<out TDomain>
+    public interface IDomainConvertible<TDomain>
     {
         TDomain ToDomain();
     }

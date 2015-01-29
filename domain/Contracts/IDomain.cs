@@ -2,7 +2,7 @@ namespace AdventureWorks.Domain.Contracts
 {
     public interface IDomain<out T>
     {
-        int? Id { get; set; }
+        int Id { get; set; }
 
         T Load(int id);
 

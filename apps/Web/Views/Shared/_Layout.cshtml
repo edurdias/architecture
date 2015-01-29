@@ -20,6 +20,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index", "Product")">Products</a></li>
+                    <li><a href="@Url.Action("Index", "Person")">People</a></li>
                 </ul>
             </div>
         </div>
@@ -33,6 +35,7 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery-ui")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", false)

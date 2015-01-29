@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using AdventureWorks.Apps.Web.ViewModels;
 using AdventureWorks.Apps.Web.ViewModels.Product;
@@ -27,7 +28,13 @@ namespace AdventureWorks.Apps.Web.Controllers
             {
                 model.Paginate(d => new IndexViewModel
                 {
-                    Id = d.Id
+                    Id = d.Id,
+                    Name = d.Name,
+                    Number = d.Number,
+                    StandardCost = d.StandardCost,
+                    ListPrice = d.ListPrice,
+                    ModelName = d.Model != null ? d.Model.Name : null,
+                    SubCategoryName = d.SubCategory != null ? d.SubCategory.Name : null
                 });
 
                 return Json(model, JsonRequestBehavior.AllowGet);
@@ -58,6 +65,7 @@ namespace AdventureWorks.Apps.Web.Controllers
                 {
                     Message.Error("Ooops. Something went wrong. Please try again.");
                     Log.Error(e);
+
                     return View(model);
                 }
                 return RedirectToAction("Index");
@@ -110,6 +118,30 @@ namespace AdventureWorks.Apps.Web.Controllers
                 Log.Error(e);
             }
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult SuggestAvailableModels(string keyword)
+        {
+            var model = Ioc.Resolve<IProductModel>();
+
+            var availableModels = model.GetAll()
+                .Where(m => m.Name.ToLowerInvariant().Contains(keyword.ToLowerInvariant()))
+                .Select(m => new { m.Id, m.Name });
+
+            return Json(availableModels, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult SuggestAvailableSubCategories(string keyword)
+        {
+            var subCategory = Ioc.Resolve<IProductSubCategory>();
+
+            var availableSubCategories = subCategory.GetAll()
+                .Where(m => m.Name.ToLowerInvariant().Contains(keyword.ToLowerInvariant()))
+                .Select(m => new { m.Id, m.Name });
+
+            return Json(availableSubCategories, JsonRequestBehavior.AllowGet);
         }
     }
 }

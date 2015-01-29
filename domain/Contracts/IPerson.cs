@@ -1,3 +1,4 @@
+using System;
 using AdventureWorks.Foundation;
 
 namespace AdventureWorks.Domain.Contracts
@@ -9,5 +10,7 @@ namespace AdventureWorks.Domain.Contracts
         string FirstName { get; set; }
         
         string LastName { get; set; }
+        
+        DateTime ModifiedDate { get; set; }
     }
 }

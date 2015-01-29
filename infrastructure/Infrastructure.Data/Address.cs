@@ -17,8 +17,6 @@ namespace AdventureWorks.Infrastructure.Data
         public Address()
         {
             this.BusinessEntityAddresses = new HashSet<BusinessEntityAddress>();
-            this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
-            this.SalesOrderHeaders1 = new HashSet<SalesOrderHeader>();
         }
     
         public int AddressID { get; set; }
@@ -33,7 +31,5 @@ namespace AdventureWorks.Infrastructure.Data
     
         public virtual StateProvince StateProvince { get; set; }
         public virtual ICollection<BusinessEntityAddress> BusinessEntityAddresses { get; set; }
-        public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
-        public virtual ICollection<SalesOrderHeader> SalesOrderHeaders1 { get; set; }
     }
 }

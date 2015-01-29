@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Transactions;
 using AdventureWorks.Domain.Contracts;
 using AdventureWorks.Domain.Contracts.Repositories;
@@ -12,14 +13,16 @@ namespace AdventureWorks.Domain.Implementation
             Repository = repository;
         }
 
-        public int? Id { get; set; }
+        public int Id { get; set; }
         
         public string FirstName { get; set; }
         
         public string Type { get; set; }
         
         public string LastName { get; set; }
-        
+
+        public DateTime ModifiedDate { get; set; }
+
         private IPersonRepository Repository { get; set; }
 
         public IPerson Load(int id)
@@ -41,7 +44,7 @@ namespace AdventureWorks.Domain.Implementation
         {
             using(var transaction = new TransactionScope())
             {
-                if (Id.HasValue)
+                if (Id != 0)
                     Repository.Update(this);
                 else
                     Repository.Add(this);

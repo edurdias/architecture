@@ -19,7 +19,6 @@ namespace AdventureWorks.Infrastructure.Data
             this.BillOfMaterials = new HashSet<BillOfMaterial>();
             this.Products = new HashSet<Product>();
             this.Products1 = new HashSet<Product>();
-            this.ProductVendors = new HashSet<ProductVendor>();
         }
     
         public string UnitMeasureCode { get; set; }
@@ -29,6 +28,5 @@ namespace AdventureWorks.Infrastructure.Data
         public virtual ICollection<BillOfMaterial> BillOfMaterials { get; set; }
         public virtual ICollection<Product> Products { get; set; }
         public virtual ICollection<Product> Products1 { get; set; }
-        public virtual ICollection<ProductVendor> ProductVendors { get; set; }
     }
 }

@@ -8,13 +8,15 @@ namespace AdventureWorks.Service.Api.Proxy
 {
     public class PersonProxy : ProxyBase, IPerson
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
 
         public string Type { get; set; }
 
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
+        public DateTime ModifiedDate { get; set; }
 
         public int CountAll()
         {

@@ -17,7 +17,6 @@ namespace AdventureWorks.Infrastructure.Data
         public StateProvince()
         {
             this.Addresses = new HashSet<Address>();
-            this.SalesTaxRates = new HashSet<SalesTaxRate>();
         }
     
         public int StateProvinceID { get; set; }
@@ -31,7 +30,5 @@ namespace AdventureWorks.Infrastructure.Data
     
         public virtual ICollection<Address> Addresses { get; set; }
         public virtual CountryRegion CountryRegion { get; set; }
-        public virtual ICollection<SalesTaxRate> SalesTaxRates { get; set; }
-        public virtual SalesTerritory SalesTerritory { get; set; }
     }
 }

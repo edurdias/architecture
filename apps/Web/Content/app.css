@@ -32,21 +32,35 @@
 
 @keyframes hideAnimation {
     to {
-        width:0;
-        height:0;
-        overflow:hidden;
+        width: 0;
+        height: 0;
+        overflow: hidden;
         padding: 0;
         margin: 0;
         border: 0;
     }
 }
+
 @-webkit-keyframes hideAnimation {
     to {
-        width:0;
-        height:0;
-        visibility:hidden;
+        width: 0;
+        height: 0;
+        visibility: hidden;
         padding: 0;
         margin: 0;
         border: 0;
     }
+}
+
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
+/* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+* html .ui-autocomplete {
+    height: 100px;
 }
