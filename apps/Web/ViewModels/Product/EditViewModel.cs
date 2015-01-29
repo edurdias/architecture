@@ -20,10 +20,18 @@ namespace AdventureWorks.Apps.Web.ViewModels.Product
             ReorderPoint = domain.ReorderPoint;
             SafetyStockLevel = domain.SafetyStockLevel;
             SellStartDate = domain.SellStartDate;
-            ModelId = domain.Model.Id;
-            ModelName = domain.Model.Name;
-            SubCategoryId = domain.SubCategory.Id;
-            SubCategoryName = domain.SubCategory.Name;
+
+            if(domain.Model != null)
+            {
+                ModelId = domain.Model.Id;
+                ModelName = domain.Model.Name;
+            }
+
+            if (domain.SubCategory != null)
+            {
+                SubCategoryId = domain.SubCategory.Id;
+                SubCategoryName = domain.SubCategory.Name;
+            }
         }
 
         public int? Id { get; set; }
