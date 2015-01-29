@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Web.Compilation;
@@ -31,8 +33,9 @@ namespace AdventureWorks.Foundation
                 {
                     containerBuilder = new ContainerBuilder();
 
-                    var assemblies = BuildManager.GetReferencedAssemblies()
-                        .Cast<Assembly>()
+                    var assemblies = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory)
+                        .Where(f => Path.GetExtension(f) == ".dll")
+                        .Select(Assembly.LoadFrom)
                         .Where(asm => asm.FullName.StartsWith("AdventureWorks"));
 
                     foreach (var assembly in assemblies)

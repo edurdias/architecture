@@ -12,22 +12,28 @@ namespace AdventureWorks.Apps.Web.ViewModels
             Limit = 10;
         }
 
+        public Pagination(IPaginable<TDomain> domain) : this()
+        {
+            Domain = domain;
+        }
+
         public int Offset { get; set; }
         
         public int Limit { get; set; }
 
         public int total { get; private set; }
 
-        public IEnumerable<TViewModel> rows { get; private set; } 
+        public IEnumerable<TViewModel> rows { get; private set; }
 
-        public void Paginate(Func<TDomain, TViewModel> expression) 
+        private IPaginable<TDomain> Domain { get; set; }
+
+        public void Paginate(Func<TDomain, TViewModel> expression)
         {
-            var domain = Ioc.Resolve<TDomain>() as IPaginable<TDomain>;
-            if(domain != null)
-            {
-                rows = domain.GetAll(Offset, Limit).Select(expression);
-                total = domain.CountAll();
-            }
+            if (Domain == null)
+                Domain = Ioc.Resolve<TDomain>();
+
+            rows = Domain.GetAll(Offset, Limit).Select(expression);
+            total = Domain.CountAll();
         }
     }
 }

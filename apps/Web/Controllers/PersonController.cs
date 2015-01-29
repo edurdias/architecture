@@ -16,6 +16,12 @@ namespace AdventureWorks.Apps.Web.Controllers
             Message = Ioc.Resolve<IMessageDisplayService>(new { controller = this });
         }
 
+        public PersonController(ILogService log, IMessageDisplayService message)
+        {
+            Log = log;
+            Message = message;
+        }
+
         private ILogService Log { get; set; }
 
         private IMessageDisplayService Message { get; set; }

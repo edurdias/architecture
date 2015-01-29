@@ -2,12 +2,20 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using AdventureWorks.Domain.Contracts;
-using AdventureWorks.Foundation;
 
 namespace AdventureWorks.Apps.Web.ViewModels.Person
 {
     public class AddViewModel : IDomainConvertible<IPerson>
     {
+        public AddViewModel()
+        {
+        }
+
+        public AddViewModel(IPerson domain)
+        {
+            Domain = domain;
+        }
+
         [Required]
         [DisplayName("First Name")]
         public string FirstName { get; set; }
@@ -16,16 +24,17 @@ namespace AdventureWorks.Apps.Web.ViewModels.Person
         [DisplayName("Last Name")]
         public string LastName { get; set; }
 
+        private IPerson Domain { get; set; }
+
         public virtual IPerson ToDomain()
         {
-            var domain = Ioc.Resolve<IPerson>();
-            domain.FirstName = FirstName;
-            domain.LastName = LastName;
+            Domain.FirstName = FirstName;
+            Domain.LastName = LastName;
 
-            domain.Type = "EM";
-            domain.ModifiedDate = DateTime.Now;
+            Domain.Type = "EM";
+            Domain.ModifiedDate = DateTime.Now;
             
-            return domain;
+            return Domain;
         }
     }
 }
