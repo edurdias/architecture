@@ -12,22 +12,21 @@ namespace AdventureWorks.Infrastructure.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class BusinessEntity
+    public partial class SalesOrderDetail
     {
-        public BusinessEntity()
-        {
-            this.BusinessEntityAddresses = new HashSet<BusinessEntityAddress>();
-            this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
-        }
-    
-        public int BusinessEntityID { get; set; }
+        public int SalesOrderID { get; set; }
+        public int SalesOrderDetailID { get; set; }
+        public string CarrierTrackingNumber { get; set; }
+        public short OrderQty { get; set; }
+        public int ProductID { get; set; }
+        public int SpecialOfferID { get; set; }
+        public decimal UnitPrice { get; set; }
+        public decimal UnitPriceDiscount { get; set; }
+        public decimal LineTotal { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<BusinessEntityAddress> BusinessEntityAddresses { get; set; }
-        public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
-        public virtual Person Person { get; set; }
-        public virtual Store Store { get; set; }
-        public virtual Vendor Vendor { get; set; }
+        public virtual SalesOrderHeader SalesOrderHeader { get; set; }
+        public virtual SpecialOfferProduct SpecialOfferProduct { get; set; }
     }
 }

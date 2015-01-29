@@ -18,11 +18,13 @@ namespace AdventureWorks.Infrastructure.Data
         {
             this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
             this.EmailAddresses = new HashSet<EmailAddress>();
+            this.Customers = new HashSet<Customer>();
+            this.PersonCreditCards = new HashSet<PersonCreditCard>();
             this.PersonPhones = new HashSet<PersonPhone>();
         }
     
-        public int Id { get; set; }
-        public string Type { get; set; }
+        public int BusinessEntityID { get; set; }
+        public string PersonType { get; set; }
         public bool NameStyle { get; set; }
         public string Title { get; set; }
         public string FirstName { get; set; }
@@ -35,10 +37,13 @@ namespace AdventureWorks.Infrastructure.Data
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
+        public virtual Employee Employee { get; set; }
         public virtual BusinessEntity BusinessEntity { get; set; }
         public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
         public virtual ICollection<EmailAddress> EmailAddresses { get; set; }
         public virtual Password Password { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<PersonCreditCard> PersonCreditCards { get; set; }
         public virtual ICollection<PersonPhone> PersonPhones { get; set; }
     }
 }

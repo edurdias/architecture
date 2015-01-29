@@ -12,21 +12,16 @@ namespace AdventureWorks.Infrastructure.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class CountryRegion
+    public partial class SalesTaxRate
     {
-        public CountryRegion()
-        {
-            this.CountryRegionCurrencies = new HashSet<CountryRegionCurrency>();
-            this.SalesTerritories = new HashSet<SalesTerritory>();
-            this.StateProvinces = new HashSet<StateProvince>();
-        }
-    
-        public string CountryRegionCode { get; set; }
+        public int SalesTaxRateID { get; set; }
+        public int StateProvinceID { get; set; }
+        public byte TaxType { get; set; }
+        public decimal TaxRate { get; set; }
         public string Name { get; set; }
+        public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<CountryRegionCurrency> CountryRegionCurrencies { get; set; }
-        public virtual ICollection<SalesTerritory> SalesTerritories { get; set; }
-        public virtual ICollection<StateProvince> StateProvinces { get; set; }
+        public virtual StateProvince StateProvince { get; set; }
     }
 }

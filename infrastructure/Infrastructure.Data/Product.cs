@@ -23,6 +23,10 @@ namespace AdventureWorks.Infrastructure.Data
             this.ProductListPriceHistories = new HashSet<ProductListPriceHistory>();
             this.ProductProductPhotoes = new HashSet<ProductProductPhoto>();
             this.ProductReviews = new HashSet<ProductReview>();
+            this.ProductVendors = new HashSet<ProductVendor>();
+            this.PurchaseOrderDetails = new HashSet<PurchaseOrderDetail>();
+            this.ShoppingCartItems = new HashSet<ShoppingCartItem>();
+            this.SpecialOfferProducts = new HashSet<SpecialOfferProduct>();
             this.TransactionHistories = new HashSet<TransactionHistory>();
             this.WorkOrders = new HashSet<WorkOrder>();
         }
@@ -64,6 +68,10 @@ namespace AdventureWorks.Infrastructure.Data
         public virtual ICollection<ProductListPriceHistory> ProductListPriceHistories { get; set; }
         public virtual ICollection<ProductProductPhoto> ProductProductPhotoes { get; set; }
         public virtual ICollection<ProductReview> ProductReviews { get; set; }
+        public virtual ICollection<ProductVendor> ProductVendors { get; set; }
+        public virtual ICollection<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
+        public virtual ICollection<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public virtual ICollection<SpecialOfferProduct> SpecialOfferProducts { get; set; }
         public virtual ICollection<TransactionHistory> TransactionHistories { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }

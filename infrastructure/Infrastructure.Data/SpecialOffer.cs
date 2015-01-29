@@ -12,22 +12,25 @@ namespace AdventureWorks.Infrastructure.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class BusinessEntity
+    public partial class SpecialOffer
     {
-        public BusinessEntity()
+        public SpecialOffer()
         {
-            this.BusinessEntityAddresses = new HashSet<BusinessEntityAddress>();
-            this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
+            this.SpecialOfferProducts = new HashSet<SpecialOfferProduct>();
         }
     
-        public int BusinessEntityID { get; set; }
+        public int SpecialOfferID { get; set; }
+        public string Description { get; set; }
+        public decimal DiscountPct { get; set; }
+        public string Type { get; set; }
+        public string Category { get; set; }
+        public System.DateTime StartDate { get; set; }
+        public System.DateTime EndDate { get; set; }
+        public int MinQty { get; set; }
+        public Nullable<int> MaxQty { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<BusinessEntityAddress> BusinessEntityAddresses { get; set; }
-        public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
-        public virtual Person Person { get; set; }
-        public virtual Store Store { get; set; }
-        public virtual Vendor Vendor { get; set; }
+        public virtual ICollection<SpecialOfferProduct> SpecialOfferProducts { get; set; }
     }
 }

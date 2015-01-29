@@ -27,6 +27,15 @@ namespace AdventureWorks.Infrastructure.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AWBuildVersion> AWBuildVersions { get; set; }
+        public virtual DbSet<DatabaseLog> DatabaseLogs { get; set; }
+        public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<EmployeeDepartmentHistory> EmployeeDepartmentHistories { get; set; }
+        public virtual DbSet<EmployeePayHistory> EmployeePayHistories { get; set; }
+        public virtual DbSet<JobCandidate> JobCandidates { get; set; }
+        public virtual DbSet<Shift> Shifts { get; set; }
         public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<AddressType> AddressTypes { get; set; }
         public virtual DbSet<BusinessEntity> BusinessEntities { get; set; }
@@ -63,6 +72,50 @@ namespace AdventureWorks.Infrastructure.Data
         public virtual DbSet<UnitMeasure> UnitMeasures { get; set; }
         public virtual DbSet<WorkOrder> WorkOrders { get; set; }
         public virtual DbSet<WorkOrderRouting> WorkOrderRoutings { get; set; }
+        public virtual DbSet<ProductVendor> ProductVendors { get; set; }
+        public virtual DbSet<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
+        public virtual DbSet<PurchaseOrderHeader> PurchaseOrderHeaders { get; set; }
+        public virtual DbSet<ShipMethod> ShipMethods { get; set; }
+        public virtual DbSet<Vendor> Vendors { get; set; }
+        public virtual DbSet<CountryRegionCurrency> CountryRegionCurrencies { get; set; }
+        public virtual DbSet<CreditCard> CreditCards { get; set; }
+        public virtual DbSet<Currency> Currencies { get; set; }
+        public virtual DbSet<CurrencyRate> CurrencyRates { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<PersonCreditCard> PersonCreditCards { get; set; }
+        public virtual DbSet<SalesOrderDetail> SalesOrderDetails { get; set; }
+        public virtual DbSet<SalesOrderHeader> SalesOrderHeaders { get; set; }
+        public virtual DbSet<SalesOrderHeaderSalesReason> SalesOrderHeaderSalesReasons { get; set; }
+        public virtual DbSet<SalesPerson> SalesPersons { get; set; }
+        public virtual DbSet<SalesPersonQuotaHistory> SalesPersonQuotaHistories { get; set; }
+        public virtual DbSet<SalesReason> SalesReasons { get; set; }
+        public virtual DbSet<SalesTaxRate> SalesTaxRates { get; set; }
+        public virtual DbSet<SalesTerritory> SalesTerritories { get; set; }
+        public virtual DbSet<SalesTerritoryHistory> SalesTerritoryHistories { get; set; }
+        public virtual DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public virtual DbSet<SpecialOffer> SpecialOffers { get; set; }
+        public virtual DbSet<SpecialOfferProduct> SpecialOfferProducts { get; set; }
+        public virtual DbSet<Store> Stores { get; set; }
+        public virtual DbSet<vEmployee> vEmployees { get; set; }
+        public virtual DbSet<vEmployeeDepartment> vEmployeeDepartments { get; set; }
+        public virtual DbSet<vEmployeeDepartmentHistory> vEmployeeDepartmentHistories { get; set; }
+        public virtual DbSet<vJobCandidate> vJobCandidates { get; set; }
+        public virtual DbSet<vJobCandidateEducation> vJobCandidateEducations { get; set; }
+        public virtual DbSet<vJobCandidateEmployment> vJobCandidateEmployments { get; set; }
+        public virtual DbSet<vAdditionalContactInfo> vAdditionalContactInfoes { get; set; }
+        public virtual DbSet<vStateProvinceCountryRegion> vStateProvinceCountryRegions { get; set; }
+        public virtual DbSet<vProductAndDescription> vProductAndDescriptions { get; set; }
+        public virtual DbSet<vProductModelCatalogDescription> vProductModelCatalogDescriptions { get; set; }
+        public virtual DbSet<vProductModelInstruction> vProductModelInstructions { get; set; }
+        public virtual DbSet<vVendorWithAddress> vVendorWithAddresses { get; set; }
+        public virtual DbSet<vVendorWithContact> vVendorWithContacts { get; set; }
+        public virtual DbSet<vIndividualCustomer> vIndividualCustomers { get; set; }
+        public virtual DbSet<vPersonDemographic> vPersonDemographics { get; set; }
+        public virtual DbSet<vSalesPerson> vSalesPersons { get; set; }
+        public virtual DbSet<vSalesPersonSalesByFiscalYear> vSalesPersonSalesByFiscalYears { get; set; }
+        public virtual DbSet<vStoreWithAddress> vStoreWithAddresses { get; set; }
+        public virtual DbSet<vStoreWithContact> vStoreWithContacts { get; set; }
+        public virtual DbSet<vStoreWithDemographic> vStoreWithDemographics { get; set; }
     
         [DbFunction("AdventureWorksContext", "ufnGetContactInformation")]
         public virtual IQueryable<ufnGetContactInformation_Result> ufnGetContactInformation(Nullable<int> personID)

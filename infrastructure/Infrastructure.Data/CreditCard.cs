@@ -12,21 +12,22 @@ namespace AdventureWorks.Infrastructure.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class CountryRegion
+    public partial class CreditCard
     {
-        public CountryRegion()
+        public CreditCard()
         {
-            this.CountryRegionCurrencies = new HashSet<CountryRegionCurrency>();
-            this.SalesTerritories = new HashSet<SalesTerritory>();
-            this.StateProvinces = new HashSet<StateProvince>();
+            this.PersonCreditCards = new HashSet<PersonCreditCard>();
+            this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
         }
     
-        public string CountryRegionCode { get; set; }
-        public string Name { get; set; }
+        public int CreditCardID { get; set; }
+        public string CardType { get; set; }
+        public string CardNumber { get; set; }
+        public byte ExpMonth { get; set; }
+        public short ExpYear { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<CountryRegionCurrency> CountryRegionCurrencies { get; set; }
-        public virtual ICollection<SalesTerritory> SalesTerritories { get; set; }
-        public virtual ICollection<StateProvince> StateProvinces { get; set; }
+        public virtual ICollection<PersonCreditCard> PersonCreditCards { get; set; }
+        public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
     }
 }

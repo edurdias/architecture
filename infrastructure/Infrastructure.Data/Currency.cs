@@ -12,21 +12,21 @@ namespace AdventureWorks.Infrastructure.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class CountryRegion
+    public partial class Currency
     {
-        public CountryRegion()
+        public Currency()
         {
             this.CountryRegionCurrencies = new HashSet<CountryRegionCurrency>();
-            this.SalesTerritories = new HashSet<SalesTerritory>();
-            this.StateProvinces = new HashSet<StateProvince>();
+            this.CurrencyRates = new HashSet<CurrencyRate>();
+            this.CurrencyRates1 = new HashSet<CurrencyRate>();
         }
     
-        public string CountryRegionCode { get; set; }
+        public string CurrencyCode { get; set; }
         public string Name { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
         public virtual ICollection<CountryRegionCurrency> CountryRegionCurrencies { get; set; }
-        public virtual ICollection<SalesTerritory> SalesTerritories { get; set; }
-        public virtual ICollection<StateProvince> StateProvinces { get; set; }
+        public virtual ICollection<CurrencyRate> CurrencyRates { get; set; }
+        public virtual ICollection<CurrencyRate> CurrencyRates1 { get; set; }
     }
 }

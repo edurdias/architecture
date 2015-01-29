@@ -12,23 +12,25 @@ namespace AdventureWorks.Infrastructure.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class UnitMeasure
+    public partial class Vendor
     {
-        public UnitMeasure()
+        public Vendor()
         {
-            this.BillOfMaterials = new HashSet<BillOfMaterial>();
-            this.Products = new HashSet<Product>();
-            this.Products1 = new HashSet<Product>();
             this.ProductVendors = new HashSet<ProductVendor>();
+            this.PurchaseOrderHeaders = new HashSet<PurchaseOrderHeader>();
         }
     
-        public string UnitMeasureCode { get; set; }
+        public int BusinessEntityID { get; set; }
+        public string AccountNumber { get; set; }
         public string Name { get; set; }
+        public byte CreditRating { get; set; }
+        public bool PreferredVendorStatus { get; set; }
+        public bool ActiveFlag { get; set; }
+        public string PurchasingWebServiceURL { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<BillOfMaterial> BillOfMaterials { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
-        public virtual ICollection<Product> Products1 { get; set; }
+        public virtual BusinessEntity BusinessEntity { get; set; }
         public virtual ICollection<ProductVendor> ProductVendors { get; set; }
+        public virtual ICollection<PurchaseOrderHeader> PurchaseOrderHeaders { get; set; }
     }
 }

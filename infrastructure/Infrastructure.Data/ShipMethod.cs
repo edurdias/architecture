@@ -12,21 +12,22 @@ namespace AdventureWorks.Infrastructure.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class CountryRegion
+    public partial class ShipMethod
     {
-        public CountryRegion()
+        public ShipMethod()
         {
-            this.CountryRegionCurrencies = new HashSet<CountryRegionCurrency>();
-            this.SalesTerritories = new HashSet<SalesTerritory>();
-            this.StateProvinces = new HashSet<StateProvince>();
+            this.PurchaseOrderHeaders = new HashSet<PurchaseOrderHeader>();
+            this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
         }
     
-        public string CountryRegionCode { get; set; }
+        public int ShipMethodID { get; set; }
         public string Name { get; set; }
+        public decimal ShipBase { get; set; }
+        public decimal ShipRate { get; set; }
+        public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<CountryRegionCurrency> CountryRegionCurrencies { get; set; }
-        public virtual ICollection<SalesTerritory> SalesTerritories { get; set; }
-        public virtual ICollection<StateProvince> StateProvinces { get; set; }
+        public virtual ICollection<PurchaseOrderHeader> PurchaseOrderHeaders { get; set; }
+        public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
     }
 }
