@@ -10,13 +10,15 @@
 namespace AdventureWorks.Infrastructure.Data
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class ProductDocument
+    public partial class uspGetEmployeeManagers_Result
     {
-        public int ProductID { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
-    
-        public virtual Product Product { get; set; }
+        public Nullable<int> RecursionLevel { get; set; }
+        public Nullable<int> BusinessEntityID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string OrganizationNode { get; set; }
+        public string ManagerFirstName { get; set; }
+        public string ManagerLastName { get; set; }
     }
 }

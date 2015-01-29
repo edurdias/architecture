@@ -8,12 +8,12 @@ namespace AdventureWorks.Domain.Contracts.Repositories
 
         IList<IProduct> GetAll(int skip = 0, int take = int.MaxValue);
 
-        void Add(IProduct person);
-
-        void Update(IProduct person);
-
-        void Remove(IProduct person);
-
         int CountAll();
+
+        void Add(IProduct domain);
+
+        void Update(IProduct domain);
+
+        void Remove(IProduct domain);
     }
 }

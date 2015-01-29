@@ -64,7 +64,6 @@ namespace AdventureWorks.Infrastructure.Data
         public virtual UnitMeasure UnitMeasure { get; set; }
         public virtual UnitMeasure UnitMeasure1 { get; set; }
         public virtual ICollection<ProductCostHistory> ProductCostHistories { get; set; }
-        public virtual ProductDocument ProductDocument { get; set; }
         public virtual ICollection<ProductInventory> ProductInventories { get; set; }
         public virtual ICollection<ProductListPriceHistory> ProductListPriceHistories { get; set; }
         public virtual ICollection<ProductProductPhoto> ProductProductPhotoes { get; set; }

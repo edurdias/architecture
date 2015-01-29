@@ -69,11 +69,9 @@ namespace AdventureWorks.Infrastructure.Repositories
             if (instance == null)
                 return null;
 
-            var businessEntityID = instance.Id.HasValue ? instance.Id.Value : 0;
-
             return new Person
             {
-                BusinessEntityID = businessEntityID,
+                BusinessEntityID = instance.Id,
                 PersonType = instance.Type ?? "EM",
                 FirstName = instance.FirstName,
                 LastName = instance.LastName,
@@ -82,7 +80,7 @@ namespace AdventureWorks.Infrastructure.Repositories
 
                 BusinessEntity = new BusinessEntity
                 {
-                    BusinessEntityID = businessEntityID,
+                    BusinessEntityID = instance.Id,
                     rowguid = Guid.NewGuid(),
                     ModifiedDate = DateTime.Now
                 }

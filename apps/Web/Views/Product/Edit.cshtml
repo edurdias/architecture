@@ -1,0 +1,92 @@
+﻿@model AdventureWorks.Apps.Web.ViewModels.Product.AddViewModel
+
+
+
+<h2>Product : Edit New</h2>
+
+@using (Html.BeginForm())
+{
+
+    Html.EnableClientValidation();
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(null, new { @class = "alert alert-danger" })
+
+    Html.RenderPartial("Message");
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Number)
+        @Html.EditorFor(m => m.Number, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.StandardCost)
+        @Html.EditorFor(m => m.StandardCost, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ListPrice)
+        @Html.EditorFor(m => m.ListPrice, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.SafetyStockLevel)
+        @Html.EditorFor(m => m.SafetyStockLevel, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReorderPoint)
+        @Html.EditorFor(m => m.ReorderPoint, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DaysToManufacture)
+        @Html.EditorFor(m => m.DaysToManufacture, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.SellStartDate)
+        @Html.EditorFor(m => m.SellStartDate, new { htmlAttributes = new { id = "sellStartDate", @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ModelId)
+        @Html.TextBoxFor(m => m.ModelName, new { id = "models", @class = "form-control" })
+        @Html.HiddenFor(m => m.ModelId, new { id = "selectedModel" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.SubCategoryId)
+        @Html.TextBoxFor(m => m.SubCategoryName, new { id = "subCategories", @class = "form-control" })
+        @Html.HiddenFor(m => m.SubCategoryId, new { id = "selectedSubCategory" })
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">
+            Save
+        </button>
+
+        <a href="@Url.Action("Index")" class="btn btn-default">
+            Cancel
+        </a>
+    </div>
+}
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            autoCompleteFor("models", "selectedModel", "@Url.Action("SuggestAvailableModels")");
+            autoCompleteFor("subCategories", "selectedSubCategory", "@Url.Action("SuggestAvailableSubCategories")");
+
+            $("#sellStartDate").datepicker({
+                numberOfMonths: 3,
+                showButtonPanel: true
+            });
+        });
+    </script>
+}

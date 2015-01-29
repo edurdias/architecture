@@ -20,7 +20,7 @@ namespace AdventureWorks.Apps.Web.ViewModels.Person
         public override IPerson ToDomain()
         {
             var domain = base.ToDomain();
-            domain.Id = Id;
+            if (Id != null) domain.Id = Id.Value;
             return domain;
         }
     }

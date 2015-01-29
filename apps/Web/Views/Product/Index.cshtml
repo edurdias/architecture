@@ -1,0 +1,51 @@
+﻿@model Pagination<IProduct, AdventureWorks.Apps.Web.ViewModels.Product.IndexViewModel>
+
+
+
+
+<h2>
+    <span class="truncate">Products</span>
+    @Html.ActionLink("Add New", "Add", null, new { @class = "btn btn-primary pull-right" })
+</h2>
+
+@{
+    Html.RenderPartial("Message");
+}
+
+<table class="table table-bordered"
+       data-toggle="table"
+       data-url="@Url.Action("Index")"
+       data-pagination="true"
+       data-side-pagination="server"
+       data-height="605">
+    <thead>
+        <tr>
+            <th data-field="Id" class="col-md-1">#</th>
+            <th data-field="SubCategoryName">Category</th>
+            <th data-field="Number">Number</th>
+            <th data-field="Name">Name</th>
+            <th data-field="StandardCost">Cost</th>
+            <th data-field="ListPrice">List Price</th>
+            <th data-field="ModelName">Model</th>
+            <th data-field="Id" data-formatter="formatRemoveColumn" class="col-md-1"></th>
+            <th data-field="Id" data-formatter="formatEditColumn" class="col-md-1"></th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+    <tfoot>
+    </tfoot>
+</table>
+
+<script type="text/javascript">
+    function formatRemoveColumn(value) {
+        return formatActionColumn("@Url.Action("Remove")/" + value, "Remove");
+    }
+
+    function formatEditColumn(value) {
+        return formatActionColumn("@Url.Action("Edit")/" + value, "Edit");
+    }
+
+    function formatActionColumn(path, label) {
+        return "<a class='btn btn-default btn-block' href='" + path + "'>" + label + "</a>";
+    }
+</script>

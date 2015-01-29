@@ -3,17 +3,39 @@ using AdventureWorks.Foundation;
 
 namespace AdventureWorks.Apps.Web.ViewModels.Product
 {
-    public class EditViewModel : IDomainConvertible<IProduct>
+    public class EditViewModel : AddViewModel
     {
-        public EditViewModel(IProduct domain)
+        public EditViewModel()
         {
-            
         }
 
-        public IProduct ToDomain()
+        public EditViewModel(IProduct domain)
+        {
+            Id = domain.Id;
+            Name = domain.Name;
+            Number = domain.Number;
+            StandardCost = domain.StandardCost;
+            ListPrice = domain.ListPrice;
+            DaysToManufacture = domain.DaysToManufacture;
+            ReorderPoint = domain.ReorderPoint;
+            SafetyStockLevel = domain.SafetyStockLevel;
+            SellStartDate = domain.SellStartDate;
+            ModelId = domain.Model.Id;
+            ModelName = domain.Model.Name;
+            SubCategoryId = domain.SubCategory.Id;
+            SubCategoryName = domain.SubCategory.Name;
+        }
+
+        public int? Id { get; set; }
+
+        public override IProduct ToDomain()
         {
             var domain = Ioc.Resolve<IProduct>();
-            return domain;
+
+            if (Id.HasValue)
+                domain = domain.Load(Id.Value);
+
+            return UpdateDomain(domain);
         }
     }
 }

@@ -42,9 +42,17 @@
     <Compile Include="IDomain.cs" />
     <Compile Include="IPerson.cs" />
     <Compile Include="IProduct.cs" />
+    <Compile Include="IProductCategory.cs" />
+    <Compile Include="IProductModel.cs" />
+    <Compile Include="IProductSubCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IDomainRepository.cs" />
+    <Compile Include="Repositories\IPaginableRepository.cs" />
     <Compile Include="Repositories\IPersonRepository.cs" />
+    <Compile Include="Repositories\IProductCategoryRepository.cs" />
+    <Compile Include="Repositories\IProductModelRepository.cs" />
     <Compile Include="Repositories\IProductRepository.cs" />
+    <Compile Include="Repositories\IProductSubCategoryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\foundation\Foundation\Foundation.csproj">

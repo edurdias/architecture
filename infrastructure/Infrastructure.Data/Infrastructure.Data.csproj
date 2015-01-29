@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -168,9 +169,6 @@
     <Compile Include="ProductDescription.cs">
       <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductDocument.cs">
-      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="ProductInventory.cs">
       <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
@@ -266,7 +264,22 @@
     <Compile Include="TransactionHistoryArchive.cs">
       <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="ufnGetContactInformation_Result.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="UnitMeasure.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uspGetBillOfMaterials_Result.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uspGetEmployeeManagers_Result.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uspGetManagerEmployees_Result.cs">
+      <DependentUpon>AdventureWorksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uspGetWhereUsedProductID_Result.cs">
       <DependentUpon>AdventureWorksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="vAdditionalContactInfo.cs">
@@ -364,6 +377,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\domain\Contracts\Contracts.csproj">
+      <Project>{9922FD40-64BD-47E5-B3CA-C6BD24AB992B}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\foundation\Foundation.Data\Foundation.Data.csproj">
       <Project>{1203CADE-FFB5-4599-A960-937E00DF4CD3}</Project>
       <Name>Foundation.Data</Name>

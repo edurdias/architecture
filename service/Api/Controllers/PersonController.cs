@@ -76,7 +76,9 @@ namespace AdventureWorks.Service.Api.Controllers
                 return null;
 
             var domain = Ioc.Resolve<IPerson>();
-            domain.Id = instance.Id;
+            if (instance.Id != null) 
+                domain.Id = instance.Id.Value;
+
             domain.Type = instance.Type;
             domain.FirstName = instance.FirstName;
             domain.LastName = instance.LastName;

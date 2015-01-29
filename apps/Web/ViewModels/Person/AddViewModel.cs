@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using AdventureWorks.Domain.Contracts;
@@ -20,6 +21,10 @@ namespace AdventureWorks.Apps.Web.ViewModels.Person
             var domain = Ioc.Resolve<IPerson>();
             domain.FirstName = FirstName;
             domain.LastName = LastName;
+
+            domain.Type = "EM";
+            domain.ModifiedDate = DateTime.Now;
+            
             return domain;
         }
     }
